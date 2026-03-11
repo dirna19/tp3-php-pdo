@@ -72,7 +72,7 @@
         </div>
       </li>
       <li class="nav-item active dropdown">
-         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Gestion des nationalité</a>
+         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-flag"></i>Gestion des nationalité</a>
          <div class="dropdown-menu">
           <a class="dropdown-item" href="LISTENATIONALITES.php">liste des nationalitées</a>
           <a class="dropdown-item" href="#">Ajouter une nationalité</a>

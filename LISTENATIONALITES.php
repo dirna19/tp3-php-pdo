@@ -5,83 +5,38 @@ $req=$monPdo->prepare("select * from nationalite");
 $req->setFetchMode(PDO::FETCH_OBJ);
 $req->execute();
 $listenationalitees=$req->fetchALL();
-var_dump($listenationalitees);
 ?>
-<main role="main">
-<div class="container">
-<table class="table table-hover">
+
+<div class="container mt-5">
+  <div class="row pt-3">
+    <div class="col-9"><h2>Liste des nationalités</h2></div>
+    <div class="col-3"><a href=""class='btn btn-success'><i class="fas fa-plus-circle"></i> Crée une nationalité</a> </div>
+  
+  </div>
+<table class="table table-hover                                                                    table-hover">
   <thead>
-    <tr>
-      <th scope="col">numero</th>
-      <th scope="col">libellé</th>
-      <th scope="col">actions</th>
+    <tr class="d-flex">
+      <th scope="col" class="col-md-2">numero</th>
+      <th scope="col" class="col-md-8">numero>libellé</th>
+      <th scope="col" class="col-md-2">numero>actions</th>
     
     </tr>
   </thead>
   <tbody>
     <?php
     foreach($listenationalitees as $nationalite)
-        ?>
-   echo "<tr>" class="table-active">
-      <th scope="row">Active</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr>
-      <th scope="row">Default</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">Primary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-secondary">
-      <th scope="row">Secondary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">Info</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-light">
-      <th scope="row">Light</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-dark">
-      <th scope="row">Dark</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
+      {  echo "<tr class='d-flex'>";
+        echo "<td class='col-md-2'>numero>$nationalite->num</td>";
+        echo "<td class='col-md-8'>$nationalite->libelle</td>";
+        echo "<td>
+        <a href=''class='btn btn-primary'><i class='fas fa-pen'></i>
+        <a href=''class='btn btn-danger'><i class='far fa-trash-alt'></i></a>
+        </td>";
+        echo "</tr>";
+      }
+      ?>
+
+     
   </tbody>
 </table>
 
